@@ -1,0 +1,53 @@
+.footer {
+  background: var(--background-secondary);
+  border-top: 1px solid var(--border);
+  padding: 40px 0;
+}
+
+.footer__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.footer__socials {
+  display: flex;
+  gap: 15px;
+}
+
+.footer__social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: var(--background);
+  color: var(--foreground);
+  transition: all 0.3s ease;
+}
+
+.footer__social:hover {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-3px);
+}
+
+.footer__text {
+  color: var(--foreground-muted);
+  font-size: 0.9rem;
+}
+
+.footer__made {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--foreground-muted);
+  font-size: 0.9rem;
+}
+
+.footer__heart {
+  color: #ef4444;
+  fill: #ef4444;
+}

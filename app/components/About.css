@@ -1,0 +1,177 @@
+.about__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+
+.about__intro h3,
+.about__skills h3,
+.about__experience h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: var(--primary);
+}
+
+.about__intro p {
+  color: var(--foreground-muted);
+  margin-bottom: 15px;
+  line-height: 1.8;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.skill-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 25px;
+  transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+}
+
+.skill-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: var(--gradient-1);
+  color: white;
+  margin-bottom: 15px;
+}
+
+.skill-card__title {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: var(--foreground);
+}
+
+.skill-card__list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skill-card__list li {
+  color: var(--foreground-muted);
+  font-size: 0.9rem;
+  padding-left: 15px;
+  position: relative;
+}
+
+.skill-card__list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+}
+
+.experience-timeline {
+  position: relative;
+  padding-left: 30px;
+}
+
+.experience-timeline::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--border);
+}
+
+.experience-item {
+  position: relative;
+  padding-bottom: 40px;
+}
+
+.experience-item:last-child {
+  padding-bottom: 0;
+}
+
+.experience-item__marker {
+  position: absolute;
+  left: -30px;
+  top: 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: 3px solid var(--background);
+}
+
+.experience-item__content {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 25px;
+  transition: all 0.3s ease;
+}
+
+.experience-item__content:hover {
+  border-color: var(--primary);
+}
+
+.experience-item__period {
+  display: inline-block;
+  background: var(--gradient-1);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  margin-bottom: 15px;
+}
+
+.experience-item__position {
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+  color: var(--foreground);
+}
+
+.experience-item__company {
+  color: var(--primary);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.experience-item__description {
+  color: var(--foreground-muted);
+  line-height: 1.7;
+}
+
+@media (max-width: 992px) {
+  .about__content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-timeline {
+    padding-left: 20px;
+  }
+
+  .experience-timeline::before {
+    left: 0;
+  }
+
+  .experience-item__marker {
+    left: -24px;
+  }
+}

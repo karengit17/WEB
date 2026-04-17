@@ -1,0 +1,124 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 20px 0;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.header--scrolled {
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 15px 0;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: var(--gradient-1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.header__nav {
+  display: block;
+}
+
+.header__list {
+  display: flex;
+  gap: 30px;
+}
+
+.header__link {
+  font-weight: 500;
+  position: relative;
+  padding: 5px 0;
+}
+
+.header__link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gradient-1);
+  transition: width 0.3s ease;
+}
+
+.header__link:hover::after {
+  width: 100%;
+}
+
+.header__socials {
+  display: flex;
+  gap: 15px;
+}
+
+.header__social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--background-secondary);
+  transition: all 0.3s ease;
+}
+
+.header__social:hover {
+  background: var(--primary);
+  transform: translateY(-3px);
+}
+
+.header__toggle {
+  display: none;
+  background: none;
+  color: var(--foreground);
+}
+
+@media (max-width: 768px) {
+  .header__nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: var(--background-secondary);
+    padding: 80px 30px;
+    transition: right 0.3s ease;
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .header__nav--open {
+    right: 0;
+  }
+
+  .header__list {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .header__link {
+    font-size: 1.2rem;
+  }
+
+  .header__socials {
+    display: none;
+  }
+
+  .header__toggle {
+    display: block;
+  }
+}
